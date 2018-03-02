@@ -1,3 +1,4 @@
+  <%= form_for(message) do |f| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -9,8 +10,10 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= f.label :title, 'タイトル' %>
+  <%= f.text_field :title %>
 
-<%= form_for(message) do |f| %>
   <%= f.label :content, 'メッセージ' %>
   <%= f.text_field :content %>
 
